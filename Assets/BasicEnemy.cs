@@ -17,10 +17,10 @@ public class BasicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		  gameObject.transform.position += new Vector3(-0.5f, 0.0f, 0.0f) * Time.deltaTime;
-      if (health == 0.0f) {
-        GameObject.Find("Global").SendMessage("AddSaps", value);
-      }
+		gameObject.transform.position += new Vector3(-0.5f, 0.0f, 0.0f) * Time.deltaTime;
+		if (health == 0.0f) {
+			GameObject.Find("Global").SendMessage("AddSaps", value);
+		}
     }
 	
 	void ApplyDamage(float damage) {

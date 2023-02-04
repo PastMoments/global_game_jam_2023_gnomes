@@ -5,10 +5,15 @@ using UnityEngine;
 public class BasicTower : MonoBehaviour
 {
 
-	public int cost = 1;
-  public float damage = 4.0f;
-  // check for null/invalid entries that represents destroyed Enemy Objects
+	public float cooldown;
+	public GameObject projectiles;
+	
+	public float shootTimer = 0.0f;
+	public int cost;
+    public float damage;
+    // check for null/invalid entries that represents destroyed Enemy Objects
 	public List<GameObject> rangeObjects = new List<GameObject>(); // list will only contain Enemies
+	
     // Start is called before the first frame update
     void Start()
     {        
@@ -17,24 +22,31 @@ public class BasicTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		shootTimer += Time.deltaTime;
+		if (shootTimer >= cooldown) {
+			rangeObjects.RemoveAll(x => (x == null));
+			if (rangeObjects.Count > 0) {
+				GameObject p = Instantiate(projectiles, new Vector3(0, 0, 0), Quaternion.identity);
+				p.GetComponent<BasicProjectile>().target = rangeObjects[0]; 
+				shootTimer -= cooldown;
+			}
+		}
     }
 	
-   // when a collision object enters range
+	// when a collision object enters range
     void OnTriggerEnter2D(Collider2D col)
     {
-      if (col.gameObject.GetComponent<BasicEnemy>()) {
-        rangeObjects.Add(col.gameObject);
-        print(rangeObjects.Count);
-      }
+		if (col.gameObject.GetComponent<BasicEnemy>()) {
+			rangeObjects.Add(col.gameObject);
+			print(rangeObjects.Count);
+		}
       
     }
 	
     void OnTriggerExit2D(Collider2D col)
     {
-
-      rangeObjects.Remove(col.gameObject);
-      print(rangeObjects.Count);
+		rangeObjects.Remove(col.gameObject);
+		print(rangeObjects.Count);
       
     }
 
