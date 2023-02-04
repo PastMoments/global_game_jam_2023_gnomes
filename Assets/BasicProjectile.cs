@@ -17,9 +17,11 @@ public class BasicProjectile : MonoBehaviour
     void Update()
     {
 		if (target) {
-			Vector3 movement = (target.transform.position - transform.position) * speed;
+			Vector3 movement = target.transform.position - transform.position;
 			movement.Normalize();
-			GetComponent<Rigidbody>().velocity = movement;
+			
+			
+			GetComponent<Rigidbody2D>().MovePosition(transform.position + movement * speed * Time.deltaTime);
 		}
     }
 }
