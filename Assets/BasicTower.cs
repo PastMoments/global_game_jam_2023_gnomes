@@ -5,12 +5,15 @@ using UnityEngine;
 public class BasicTower : MonoBehaviour
 {
 
-    public float health = 10.0f;
 	public float cooldown = 1.0f;
 	public GameObject projectiless;
 	
 	public float shootTimer = 0.0f;
-	public List<GameObject> rangeObjects = new List<GameObject>();
+	public int cost = 1;
+    public float damage = 4.0f;
+    // check for null/invalid entries that represents destroyed Enemy Objects
+	public List<GameObject> rangeObjects = new List<GameObject>(); // list will only contain Enemies
+	
     // Start is called before the first frame update
     void Start()
     {        
@@ -33,14 +36,19 @@ public class BasicTower : MonoBehaviour
    // when a collision object enters range
     void OnTriggerEnter2D(Collider2D col)
     {
-		rangeObjects.Add(col.gameObject);
-		print(rangeObjects);
-		
+      if (col.gameObject.GetComponent<BasicEnemy>()) {
+        rangeObjects.Add(col.gameObject);
+        print(rangeObjects.Count);
+      }
+      
     }
 	
     void OnTriggerExit2D(Collider2D col)
     {
-		rangeObjects.Remove(col.gameObject);
-		print(rangeObjects);
+
+      rangeObjects.Remove(col.gameObject);
+      print(rangeObjects.Count);
+      
     }
+
 }
