@@ -16,7 +16,6 @@ public class BasicEnemy : MonoBehaviour
     void Update()
     {
 		gameObject.transform.position += new Vector3(0.0f, -0.5f, 0.0f) * Time.deltaTime;
-        
     }
 	
 	void ApplyDamage(float damage) {
