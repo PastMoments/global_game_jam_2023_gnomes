@@ -42,12 +42,6 @@ public class BasicEnemy : MonoBehaviour
 			DOTDamage = 0.0f;
 		}
 
-		float intensity = speed;
-		if (duration > 0) {
-			intensity = speed / slowAmount;
-
-			duration -= Time.deltaTime;
-		}
 
 		if (waypoints.Count <= currentWaypointIndex) {
 			Destroy(gameObject);
