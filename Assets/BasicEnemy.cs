@@ -38,9 +38,7 @@ public class BasicEnemy : MonoBehaviour
 		if (currentWaypointIndex == 0) {
 			GetComponent<Rigidbody2D>().position = target;
 		} else {
-			
 			GetComponent<Rigidbody2D>().MovePosition(transform.position + direction * Time.deltaTime * speed);
-			
 		}
 
 		if (length_to_target <= Time.deltaTime * speed) {
