@@ -30,17 +30,20 @@ public class TurretSpawner : MonoBehaviour
     // Update is called once per frame
     void Update() { 
 		// Shenanigans to make sure buttons work good
-		if (eventSystem.currentSelectedGameObject == null) {
-			if (currentPlacing != null) {
-				eventSystem.SetSelectedGameObject(lastSelectedObject);
-			}
-        } else {
-			lastSelectedObject = eventSystem.currentSelectedGameObject;
-			if (currentPlacing == null) {
-				eventSystem.SetSelectedGameObject(null);
-			}
-		}
 		
+		GameObject mute = GameObject.Find("Mute");
+		if (eventSystem.currentSelectedGameObject != mute) {
+			if (eventSystem.currentSelectedGameObject == null) {
+				if (currentPlacing != null) {
+					eventSystem.SetSelectedGameObject(lastSelectedObject);
+				}
+			} else {
+				lastSelectedObject = eventSystem.currentSelectedGameObject;
+				if (currentPlacing == null) {
+					eventSystem.SetSelectedGameObject(null);
+				}
+			}
+		}		
 
 		if (building && currentPlacing != null) {
 			Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -86,9 +89,7 @@ public class TurretSpawner : MonoBehaviour
 			if (currentPlacing != null) {
 				foreach (GameObject turret in placedTurrets) {
 					float dist = Vector3.Distance(currentPlacing.transform.position, turret.transform.position);
-					print(dist);
 					if (dist < minimumPlaceDistance) {
-						
 						return;
 					}
 				}
