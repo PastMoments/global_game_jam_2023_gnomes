@@ -513,11 +513,11 @@ PrefabInstance:
     - target: {fileID: 5513737484085001840, guid: f89a1c15fb4d9e547acd140ced8bfb31, type: 3}
       propertyPath: RedShroom
       value: 
-      objectReference: {fileID: 6174871476534077835, guid: 54151b1836f3e7f4a8a27bc8c4ce2c94, type: 3}
+      objectReference: {fileID: 6539036417489751914, guid: dd77467d2f4217341a0e0b7275badb10, type: 3}
     - target: {fileID: 5513737484085001840, guid: f89a1c15fb4d9e547acd140ced8bfb31, type: 3}
       propertyPath: BlueShroom
       value: 
-      objectReference: {fileID: 6539036417489751914, guid: dd77467d2f4217341a0e0b7275badb10, type: 3}
+      objectReference: {fileID: 6174871476534077835, guid: 54151b1836f3e7f4a8a27bc8c4ce2c94, type: 3}
     - target: {fileID: 5513737484085001840, guid: f89a1c15fb4d9e547acd140ced8bfb31, type: 3}
       propertyPath: eventSystem
       value: 
