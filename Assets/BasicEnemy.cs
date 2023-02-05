@@ -10,7 +10,8 @@ public class BasicEnemy : MonoBehaviour
 
     public List<Transform> waypoints;
 	public int currentWaypointIndex = 0;
-	
+	float slowAmount;
+	float duration;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,13 @@ public class BasicEnemy : MonoBehaviour
     void Update()
     {
         //transform.Rotate(Vector3.forward * 5);
+
+		float intensity = speed;
+		if (duration > 0) {
+			intensity = speed / slowAmount;
+
+			duration -= Time.deltaTime;
+		}
 
 		if (waypoints.Count <= currentWaypointIndex) {
 			Destroy(gameObject);
@@ -38,20 +46,25 @@ public class BasicEnemy : MonoBehaviour
 		if (currentWaypointIndex == 0) {
 			GetComponent<Rigidbody2D>().position = target;
 		} else {
-			GetComponent<Rigidbody2D>().MovePosition(transform.position + direction * Time.deltaTime * speed);
+			GetComponent<Rigidbody2D>().MovePosition(transform.position + direction * Time.deltaTime * intensity);
 		}
 
-		if (length_to_target <= Time.deltaTime * speed) {
+		if (length_to_target <= Time.deltaTime * intensity) {
 			currentWaypointIndex++;
 		}
 	
     }
 	
-	void ApplyDamage(float damage) {
+	public void ApplyDamage(float damage) {
 		health -= damage;
 		if (health <= 0.0f) {
 			GameObject.Find("Global").SendMessage("AddSaps", value);
 			Destroy(gameObject);
 		}
+	}
+
+	public void ApplySlow((float, float) slow) {
+		this.slowAmount = slow.Item1;
+		this.duration = slow.Item2;
 	}
 }
