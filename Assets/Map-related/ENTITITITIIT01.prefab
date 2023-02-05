@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca9f7577b653814f8bbc194f362c7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentIndex: 0
 --- !u!114 &6167379177552564383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,5 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e05227fa311474cb2d7e520a8782c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 1
   moveDirection: {x: 0, y: 0, z: 0}

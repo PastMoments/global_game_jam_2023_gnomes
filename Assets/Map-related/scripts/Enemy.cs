@@ -7,7 +7,8 @@ public class Enemy: MonoBehaviour
 {
     private int             wayPointCount;      // Number of waypoints
     private Transform[]     wayPoints;          // Waypoints info
-    private int             currentIndex = 0;   // Current position index
+    public int currentIndex = 0;
+    // private int             currentIndex = 0;   // Current position index
     private Movement2D      movement2D;         // Object movement control -> refer to Movement2D.cs
 
     public void Setup(Transform[] wayPoints){
@@ -15,11 +16,14 @@ public class Enemy: MonoBehaviour
 
         // Setting WayPoints info for Eenemy movement
         wayPointCount = wayPoints.Length;
+
+        print(wayPointCount);
         this.wayPoints = new Transform[wayPointCount];
         this.wayPoints = wayPoints;
 
         // Setting enemy;s position as the 0th index of wayPoints
         transform.position = wayPoints[currentIndex].position;
+        
 
         // Initiate enemy moving functions
         StartCoroutine("OnMove");
@@ -31,7 +35,7 @@ public class Enemy: MonoBehaviour
 
         while(true){
             // Enemy object rotation
-            transform.Rotate(Vector3.forward * 10);
+            transform.Rotate(Vector3.forward * 5);
 
             // If the distance between enemy's current position and target is less than 0.02 * movement2D.MoveSpeed start "if" statement
             // movement2D.MoveSpeed -> Because if the speed is fast, a frame moves bigger than 0.02, and it may neglect "if" statement
@@ -47,6 +51,7 @@ public class Enemy: MonoBehaviour
 
     private void NextMoveTo()
     {
+        print(currentIndex);
         // If final wayPoints not reached 
         if (currentIndex < wayPointCount - 1)
         {
@@ -54,6 +59,7 @@ public class Enemy: MonoBehaviour
             transform.position = wayPoints[currentIndex].position;
             // Enemy next target => next wayPoints
             currentIndex ++;
+            //print(currentIndex);
 
             Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
             movement2D.MoveTo(direction);
