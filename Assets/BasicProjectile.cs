@@ -8,6 +8,7 @@ public class BasicProjectile : MonoBehaviour
 	
 	public GameObject target;
 	public float speed;
+	public float damage = 0.0f;
     // Start is called before the first frame update
     void Start()
     {        
@@ -24,4 +25,16 @@ public class BasicProjectile : MonoBehaviour
 			GetComponent<Rigidbody2D>().MovePosition(transform.position + movement * speed * Time.deltaTime);
 		}
     }
+	
+	
+	// when a collision object enters range
+    void OnTriggerEnter2D(Collider2D col)
+    {
+		if (col.gameObject.GetComponent<BasicEnemy>()) {
+			col.gameObject.SendMessage("ApplyDamage", damage);
+			Destroy(gameObject);
+		}
+      
+    }
+	
 }

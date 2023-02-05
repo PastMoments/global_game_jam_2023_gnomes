@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  value: 1
 --- !u!61 &8789240060343764959
 BoxCollider2D:
   m_ObjectHideFlags: 0

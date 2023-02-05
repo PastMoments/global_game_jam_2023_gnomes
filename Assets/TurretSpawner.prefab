@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d318c737b32d6245bdee54bee25c5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicTurret: {fileID: 0}
+  BasicTurret: {fileID: 9088528911149874136, guid: 48f7227d6405ad148a34f2305d3106db, type: 3}
   building: 0
   currentBuilding: {fileID: 0}
 --- !u!60 &5513737484085001836

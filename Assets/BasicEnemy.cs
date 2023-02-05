@@ -25,9 +25,8 @@ public class BasicEnemy : MonoBehaviour
 	
 	void ApplyDamage(float damage) {
 		health -= damage;
-    if (health == 0.0f) {
-      Destroy(gameObject);
-    }
-		print("Trying to apply damage");
+		if (health <= 0.0f) {
+		  Destroy(gameObject);
+		}
   }
 }
