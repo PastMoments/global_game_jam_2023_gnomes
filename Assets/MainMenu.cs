@@ -19,7 +19,11 @@ public class MainMenu : MonoBehaviour
 
     public void Playgame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		int index = SceneManager.GetActiveScene().buildIndex + 1;
+		if(SceneManager.sceneCount <= index) {
+			index = 0;
+		}
+		SceneManager.LoadScene(index);
     }
 
     public void QuitGame ()

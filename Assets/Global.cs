@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Global : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class Global : MonoBehaviour
     {
         health -= damage;
         if (health == 0.0f) {
-            print("GEE GEE");
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
