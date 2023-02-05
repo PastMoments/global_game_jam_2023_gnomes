@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6539036417489751910}
   - component: {fileID: 6539036417489751911}
-  - component: {fileID: 6539036417489751912}
+  - component: {fileID: -7542654159071611987}
   m_Layer: 0
   m_Name: toof2
   m_TagString: Untagged
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6539036417489751912
+--- !u!114 &-7542654159071611987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,16 +95,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6539036417489751914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2d77bfc07c0cfa4492456c733d82935, type: 3}
+  m_Script: {fileID: 11500000, guid: df29b202fbf67844dadfb0c397ddf184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 1
   projectiles: {fileID: 1961289664350973157, guid: c222d85ea16cf8e408a156193d8bd567, type: 3}
-  shootTimer: 1
-  cost: 5
-  damage: 4
+  shootTimer: 0
+  cost: 0
+  damage: 0
   range: 5
   rangeObjects: []
+  allProjectiles: []
 --- !u!1001 &7528999712563429584
 PrefabInstance:
   m_ObjectHideFlags: 0

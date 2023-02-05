@@ -9,15 +9,15 @@ public class BasicProjectile : MonoBehaviour
 	public GameObject target;
 	public float speed;
 	public float damage = 0.0f;
-	Vector2 movement;
+	public Vector2 movement;
 	
-	float destroyTimer = 5.0f; // destroy itself 5 seconds after targets disappear
+	public float destroyTimer = 5.0f; // destroy itself 5 seconds after targets disappear
     // Start is called before the first frame update
     void Start() {
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
 		if (target) {
 			if (movement == Vector2.zero) {
@@ -39,7 +39,7 @@ public class BasicProjectile : MonoBehaviour
 	
 	
 	// when a collision object enters range
-    void OnTriggerEnter2D(Collider2D col)
+    public virtual void OnTriggerEnter2D(Collider2D col)
     {
 		if (col.gameObject.GetComponent<BasicEnemy>()) {
 			col.gameObject.SendMessage("ApplyDamage", damage);

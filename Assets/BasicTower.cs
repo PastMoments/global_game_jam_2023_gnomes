@@ -16,7 +16,7 @@ public class BasicTower : MonoBehaviour
 	public List<GameObject> rangeObjects = new List<GameObject>(); // list will only contain Enemies
 	
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {        
     }
 
@@ -24,7 +24,7 @@ public class BasicTower : MonoBehaviour
 	// it will still be 0 when we try to access it. 
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
 		shootTimer += Time.deltaTime;
 		if (shootTimer >= cooldown) {
@@ -45,7 +45,7 @@ public class BasicTower : MonoBehaviour
     }
 	
 	// when a collision object enters range
-    void OnTriggerEnter2D(Collider2D col)
+    public virtual void OnTriggerEnter2D(Collider2D col)
     {
 		if (col.gameObject.GetComponent<BasicEnemy>()) {
 			rangeObjects.Add(col.gameObject);
@@ -53,7 +53,7 @@ public class BasicTower : MonoBehaviour
       
     }
 	
-    void OnTriggerExit2D(Collider2D col)
+    public virtual void OnTriggerExit2D(Collider2D col)
     {
 		rangeObjects.Remove(col.gameObject);
       
