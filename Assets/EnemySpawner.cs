@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEnemy() {
         while(true) {
 			// TODO: add more complex logic for spawning enemies
-            GameObject clone = Instantiate(enemyPrefabs[currentIndex]);
+            GameObject clone = Instantiate(enemyPrefabs[currentIndex], new Vector3(-10.0f, -10.0f, 0.0f), Quaternion.identity);
             BasicEnemy enemy = clone.GetComponent<BasicEnemy>();
 
 			enemy.waypoints = new List<Transform>(wayPoints);

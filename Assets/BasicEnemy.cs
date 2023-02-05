@@ -23,8 +23,6 @@ public class BasicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Rotate(Vector3.forward * 5);
-		print(health);
 		float intensity = speed;
 		if (duration > 0.0f) {
 			if (slowAmount != 0.0f)  {
