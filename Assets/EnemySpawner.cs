@@ -5,25 +5,53 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject enemyPrefab;
+    // private GameObject enemyPrefab;
+    private GameObject[] enemyPrefabs;
+
 	// TODO: add different prefabs
     [SerializeField]
     private float spawnTime;
     [SerializeField]
     private List<Transform> wayPoints;
-    // [SerializeField]
-    // private Wave        currentWave;            // Current wave info
+
+    // private int currentIndex = 0;
+    float refTime    = 3.0f;
+    int   currentIndex = 0;
+    int   lastPeriod = 0;
 
     private void Awake() {
-        // 적 생성 코루틴 함수 호출
+        
         StartCoroutine("SpawnEnemy");
     }    
 
+    private void Update() {
+
+        float currentTime = GameObject.Find("Global").GetComponent<Global>().timeElapsed;
+        // print(currentTime);
+
+        int period = (int)(currentTime / refTime);
+
+        if ((period > lastPeriod) && (currentIndex == enemyPrefabs.Length - 1))
+        {
+            lastPeriod = period;
+
+            currentIndex = 0;
+            
+        }
+        else if ((period > lastPeriod) && (currentIndex < enemyPrefabs.Length))
+        {
+            lastPeriod = period;
+
+            currentIndex++;
+        }
+        // print(index);
+
+    }
 
     private IEnumerator SpawnEnemy() {
         while(true) {
 			// TODO: add more complex logic for spawning enemies
-            GameObject clone = Instantiate(enemyPrefab);
+            GameObject clone = Instantiate(enemyPrefabs[currentIndex]);
             BasicEnemy enemy = clone.GetComponent<BasicEnemy>();
 
 			enemy.waypoints = new List<Transform>(wayPoints);
