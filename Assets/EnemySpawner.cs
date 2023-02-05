@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject  enemyPrefab;
+    private GameObject enemyPrefab;
 	// TODO: add different prefabs
     [SerializeField]
-    private float       spawnTime;
+    private float spawnTime;
     [SerializeField]
     private List<Transform> wayPoints;
     // [SerializeField]
@@ -20,10 +20,8 @@ public class EnemySpawner : MonoBehaviour
     }    
 
 
-    private IEnumerator SpawnEnemy()
-    {
-        while(true)
-        {
+    private IEnumerator SpawnEnemy() {
+        while(true) {
 			// TODO: add more complex logic for spawning enemies
             GameObject clone = Instantiate(enemyPrefab);
             BasicEnemy enemy = clone.GetComponent<BasicEnemy>();
@@ -33,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
 				enemy.GetComponent<Rigidbody2D>().position = wayPoints[0].position;
 			}
 
-            yield return new WaitForSeconds(spawnTime);             // wait until spawnTime 
+            yield return new WaitForSeconds(spawnTime); // wait until spawnTime 
         }
     }
 }
