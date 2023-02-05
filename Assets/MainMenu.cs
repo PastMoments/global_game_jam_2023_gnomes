@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     public void Playgame ()
     {
 		int index = SceneManager.GetActiveScene().buildIndex + 1;
-		if(SceneManager.sceneCount <= index) {
+		if(SceneManager.sceneCountInBuildSettings <= index) {
 			index = 0;
 		}
 		SceneManager.LoadScene(index);
