@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
     public float health = 10.0f;
-    public int value = 1;
+    public float value = 1.0f;
 	public float speed = 1.0f;
 
     public List<Transform> waypoints;
@@ -23,7 +23,8 @@ public class BasicEnemy : MonoBehaviour
         //transform.Rotate(Vector3.forward * 5);
 
 		if (waypoints.Count <= currentWaypointIndex) {
-			// TODO: destroy itself and then decrease our health
+			Destroy(gameObject);
+			GameObject.Find("Global").SendMessage("ApplyDamage", value);
 			return;
 		}
 		
