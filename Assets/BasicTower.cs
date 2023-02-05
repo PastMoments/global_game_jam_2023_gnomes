@@ -26,7 +26,7 @@ public class BasicTower : MonoBehaviour
 		if (shootTimer >= cooldown) {
 			rangeObjects.RemoveAll(x => (x == null));
 			if (rangeObjects.Count > 0) {
-				GameObject p = Instantiate(projectiles, new Vector3(0, 0, 0), Quaternion.identity);
+				GameObject p = Instantiate(projectiles, transform.position, Quaternion.identity);
 				p.GetComponent<BasicProjectile>().target = rangeObjects[0]; 
 				shootTimer -= cooldown;
 			}
@@ -38,7 +38,6 @@ public class BasicTower : MonoBehaviour
     {
 		if (col.gameObject.GetComponent<BasicEnemy>()) {
 			rangeObjects.Add(col.gameObject);
-			print(rangeObjects.Count);
 		}
       
     }
@@ -46,7 +45,6 @@ public class BasicTower : MonoBehaviour
     void OnTriggerExit2D(Collider2D col)
     {
 		rangeObjects.Remove(col.gameObject);
-		print(rangeObjects.Count);
       
     }
 
