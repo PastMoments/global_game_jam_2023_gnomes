@@ -20,6 +20,9 @@ public class BasicTower : MonoBehaviour
     {        
     }
 
+	// reference from prefab builds a new basic turret with default value 0. changing it in the editor does not does the value of what we spawn with 
+	// it will still be 0 when we try to access it. 
+
     // Update is called once per frame
     void Update()
     {

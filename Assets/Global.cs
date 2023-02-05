@@ -41,4 +41,15 @@ public class Global : MonoBehaviour
     {
         return treeSap;
     }
+
+    public void MuteToggle(bool muted)
+    {
+
+        if(muted) {
+            AudioListener.volume = 0;
+        } else {
+            AudioListener.volume = 1;
+        }
+
+    }
 }

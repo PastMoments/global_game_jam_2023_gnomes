@@ -18,15 +18,14 @@ public class BasicEnemy : MonoBehaviour
     void Update()
     {
 		gameObject.transform.position += new Vector3(-0.5f, 0.0f, 0.0f) * Time.deltaTime;
-		if (health == 0.0f) {
-			GameObject.Find("Global").SendMessage("AddSaps", value);
-		}
+	
     }
 	
 	void ApplyDamage(float damage) {
 		health -= damage;
 		if (health <= 0.0f) {
-		  Destroy(gameObject);
+			GameObject.Find("Global").SendMessage("AddSaps", value);
+			Destroy(gameObject);
 		}
-  }
+	}
 }

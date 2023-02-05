@@ -43,12 +43,15 @@ public class TurretSpawner : MonoBehaviour
 		}
 	}
 	
-	
 	void OnMouseDown() {
 		if (building) {
 			if (currentPlacing != null) {
 				currentPlacing.GetComponent<BasicTower>().enabled = true;
 				currentPlacing = null;
+				
+				// Remove turret cost from Currency, however, the cost is defined in the prefab in the editor.
+				int turretCost = p.GetComponent<BasicTower>().cost;
+				GameObject.Find("Global").SendMessage("RemoveSaps", turretCost);
 			}
 		}
 	}
