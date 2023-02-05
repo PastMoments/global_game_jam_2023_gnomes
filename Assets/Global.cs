@@ -35,7 +35,7 @@ public class Global : MonoBehaviour
 		
     }
     
-    void ApplyDamage(float damage)
+    public void ApplyDamage(float damage)
     {
         health -= damage;
         if (health == 0.0f) {
@@ -43,17 +43,17 @@ public class Global : MonoBehaviour
         }
     }
 
-    void AddSaps(int amount) 
+    public void AddSaps(int amount) 
     {
         treeSap += amount; 
     }
 
-    void RemoveSaps(int amount)
+    public void RemoveSaps(int amount)
     {
         treeSap -= amount;
     }
 
-    int GetSaps() 
+    public int GetSaps() 
     {
         return treeSap;
     }

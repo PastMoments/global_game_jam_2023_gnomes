@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5374614333405030377}
   - component: {fileID: 5374614333405030376}
-  - component: {fileID: 5374614333405030375}
+  - component: {fileID: -5053104423776714028}
   m_Layer: 0
   m_Name: zh_proj
   m_TagString: Z ordering
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5374614333405030375
+--- !u!114 &-5053104423776714028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,15 +95,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5374614333405030373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2d77bfc07c0cfa4492456c733d82935, type: 3}
+  m_Script: {fileID: 11500000, guid: d2a5cdad4b99d4e4fb4f5167a4766e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
   projectiles: {fileID: 4025902757260030147, guid: 5bd33606040325e4aa18246d1349cb21, type: 3}
-  shootTimer: 5
-  cost: 5
-  damage: 15
-  range: 15
+  shootTimer: 0
+  cost: 0
+  damage: 2
+  range: 5
   rangeObjects: []
 --- !u!1001 &8670912396968667231
 PrefabInstance:

@@ -42,7 +42,7 @@ public class BasicProjectile : MonoBehaviour
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
 		if (col.gameObject.GetComponent<BasicEnemy>()) {
-			col.gameObject.SendMessage("ApplyDamage", damage);
+			col.gameObject.GetComponent<BasicEnemy>().ApplyDamage(damage);
 			Destroy(gameObject);
 		}
       

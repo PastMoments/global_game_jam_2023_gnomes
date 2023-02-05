@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1302911496253308022}
   - component: {fileID: 1302911496253307977}
-  - component: {fileID: 1302911496253307976}
   - component: {fileID: 1302911496253307979}
   - component: {fileID: 2109931230199345998}
+  - component: {fileID: -4942884426296646523}
   m_Layer: 0
   m_Name: pm
   m_TagString: Z ordering
@@ -141,3 +141,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-4942884426296646523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302911496253307978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041823db7f5dc364cba5312c567de406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 2
+  damage: 2
+  movement: {x: 0, y: 0}
+  destroyTimer: 5
+  canPierceEnemies: 5

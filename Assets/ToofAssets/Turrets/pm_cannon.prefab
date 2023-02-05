@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d77bfc07c0cfa4492456c733d82935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 10
   projectiles: {fileID: 1302911496253307978, guid: 8456d2425ed63a44a8948e5b858b9723, type: 3}
   shootTimer: 3
   cost: 5
