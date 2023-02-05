@@ -22,7 +22,12 @@ public class TurretSpawner : MonoBehaviour
 		if (Input.GetMouseButtonDown(0)) {
 			if (building) {
 				Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				GameObject p = Instantiate(BasicTurret, new Vector3(worldPosition.x, worldPosition.y, 0.0f), Quaternion.identity);
+				GameObject p = Instantiate(currentBuilding, new Vector3(worldPosition.x, worldPosition.y, 0.0f), Quaternion.identity);
+
+				// Remove turret cost from Currency, however, the cost is defined in the prefab in the editor.
+				int turretCost = p.GetComponent<BasicTower>().cost;
+				GameObject.Find("Global").SendMessage("RemoveSaps", turretCost);
+
 			}			
 		}
     }
@@ -36,4 +41,5 @@ public class TurretSpawner : MonoBehaviour
 			currentBuilding = null;
 		}
 	}
+
 }
