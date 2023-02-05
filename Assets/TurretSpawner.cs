@@ -8,15 +8,15 @@ public class TurretSpawner : MonoBehaviour
 	
 	
 	public GameObject BasicTurret;
-	
 	public bool building = false;
+	public float minimumPlaceDistance;
 	public GameObject currentBuilding;
-	public GameObject currentPlacing; 
-	
+	public GameObject currentPlacing;
+	public List<GameObject> placedTurrets = new List<GameObject>(); // list will only contain Enemies
 	
     [SerializeField] private EventSystem eventSystem;
     private GameObject lastSelectedObject;
- 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +30,7 @@ public class TurretSpawner : MonoBehaviour
         else
             lastSelectedObject = eventSystem.currentSelectedGameObject; // keep setting current selected object
 		
+
 		if (building && currentPlacing != null) {
 			Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			currentPlacing.transform.position = new Vector3(mousePosition.x, mousePosition.y, currentPlacing.transform.position.z);
@@ -63,6 +64,7 @@ public class TurretSpawner : MonoBehaviour
 			
 			currentPlacing = Instantiate(turret, transform.position, Quaternion.identity);
 			currentPlacing.GetComponent<BasicTower>().enabled = false;
+			placedTurrets.Add(currentPlacing.gameObject);
 		} else {
 			building = false;
 			currentBuilding = null;
@@ -72,15 +74,19 @@ public class TurretSpawner : MonoBehaviour
 	void OnMouseDown() {
 		if (building) {
 			if (currentPlacing != null) {
-				
-				// Remove turret cost from Currency, however, the cost is defined in the prefab in the editor.
-				GameObject global_obj = GameObject.Find("Global");				
-				int turretCost = currentPlacing.GetComponent<BasicTower>().cost;
-				if(global_obj.GetComponent<Global>().treeSap >= turretCost) {
-					currentPlacing.GetComponent<BasicTower>().enabled = true;
-					global_obj.SendMessage("RemoveSaps", turretCost);
-					currentPlacing = null;
-					currentBuilding = null;
+				foreach (GameObject turret in placedTurrets) {
+					float dist = Vector3.Distance(currentTurret.position, turret.position);
+					if (dist > minimumPlaceDistance) {
+            // Remove turret cost from Currency, however, the cost is defined in the prefab in the editor.
+            GameObject global_obj = GameObject.Find("Global");				
+            int turretCost = currentPlacing.GetComponent<BasicTower>().cost;
+            if(global_obj.GetComponent<Global>().treeSap >= turretCost) {
+              currentPlacing.GetComponent<BasicTower>().enabled = true;
+              global_obj.SendMessage("RemoveSaps", turretCost);
+              currentPlacing = null;
+              currentBuilding = null;
+            }
+					}
 				}
 			}
 		}
