@@ -1090,6 +1090,14 @@ PrefabInstance:
       value: -9.900002
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059145985, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230294645059145985, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230294645059145985, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
