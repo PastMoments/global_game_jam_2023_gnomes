@@ -11,7 +11,7 @@ public class Global : MonoBehaviour
     public static Global instance;
     public float health = 100.0f; 
     public float timeElapsed = 0.0f;  
-    public int treeSap = 10;
+    public int treeSap = 2;
 
 	public GameObject TimerText;
 	public GameObject MoneyText;
