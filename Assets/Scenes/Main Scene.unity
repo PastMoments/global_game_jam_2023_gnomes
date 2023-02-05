@@ -181,7 +181,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -629,6 +629,22 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: SpawnRedShroom
       objectReference: {fileID: 0}
+    - target: {fileID: 2389493771971018372, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.369999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389493771971018372, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.920002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522938225783379429, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.369999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522938225783379429, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.920002
+      objectReference: {fileID: 0}
     - target: {fileID: 2522938227479896462, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -649,6 +665,14 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: SpawnCatapult
       objectReference: {fileID: 0}
+    - target: {fileID: 3229976631862868515, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.369999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229976631862868515, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.920002
+      objectReference: {fileID: 0}
     - target: {fileID: 4673002114739422407, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -661,6 +685,18 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: SpawnBlueShroom
       objectReference: {fileID: 0}
+    - target: {fileID: 5053441714863719341, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.369999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053441714863719341, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.920002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230294645059145985, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8230294645059145987, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_Name
       value: UI
@@ -669,13 +705,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 374104664}
+    - target: {fileID: 8230294645059146014, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_RootOrder
@@ -699,11 +739,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1102.0001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 542
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -715,7 +767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059146015, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_LocalRotation.w

@@ -29,10 +29,17 @@ public class TurretSpawner : MonoBehaviour
 
     // Update is called once per frame
     void Update() { 
-		if (eventSystem.currentSelectedGameObject == null)
-            eventSystem.SetSelectedGameObject(lastSelectedObject); // no current selection, go back to last selected
-        else
-            lastSelectedObject = eventSystem.currentSelectedGameObject; // keep setting current selected object
+		// Shenanigans to make sure buttons work good
+		if (eventSystem.currentSelectedGameObject == null) {
+			if (currentPlacing != null) {
+				eventSystem.SetSelectedGameObject(lastSelectedObject);
+			}
+        } else {
+			lastSelectedObject = eventSystem.currentSelectedGameObject;
+			if (currentPlacing == null) {
+				eventSystem.SetSelectedGameObject(null);
+			}
+		}
 		
 
 		if (building && currentPlacing != null) {
@@ -91,6 +98,7 @@ public class TurretSpawner : MonoBehaviour
 				int turretCost = currentPlacing.GetComponent<BasicTower>().cost;
 				if(global_obj.GetComponent<Global>().treeSap >= turretCost) {
 				  currentPlacing.GetComponent<BasicTower>().enabled = true;
+				  currentPlacing.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
 				  placedTurrets.Add(currentPlacing);
 				  global_obj.SendMessage("RemoveSaps", turretCost);
 				  currentPlacing = null;

@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d318c737b32d6245bdee54bee25c5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BasicTurret: {fileID: 9088528911149874136, guid: 48f7227d6405ad148a34f2305d3106db, type: 3}
+  Cannon: {fileID: 2933250930355036379, guid: 2c8a4bdc6c86e8b4099861889b4fd676, type: 3}
+  Harpoon: {fileID: 6749794802126100000, guid: 76684ba17fbbd7b4193034e003ae0a10, type: 3}
+  Catapult: {fileID: 5374614333405030373, guid: 4a38c218991911b40836acaad92fa0ce, type: 3}
+  RedShroom: {fileID: 6539036417489751914, guid: dd77467d2f4217341a0e0b7275badb10, type: 3}
+  BlueShroom: {fileID: 6174871476534077835, guid: 54151b1836f3e7f4a8a27bc8c4ce2c94, type: 3}
   building: 0
   minimumPlaceDistance: 1
   currentBuilding: {fileID: 0}

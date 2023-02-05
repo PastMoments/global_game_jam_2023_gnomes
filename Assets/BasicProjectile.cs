@@ -20,16 +20,21 @@ public class BasicProjectile : MonoBehaviour
     void Update()
     {
 		if (target) {
-			movement = (Vector2)(target.transform.position - transform.position);
-			movement.Normalize();
+			if (movement == Vector2.zero) {
+				movement = (Vector2)(target.transform.position - transform.position);
+			}
 		} else if (destroyTimer > 0.0f) {
 			destroyTimer -= Time.deltaTime;
 		} else {
 			Destroy(gameObject);
 		}
 		
+		movement.Normalize();
 		GetComponent<Rigidbody2D>().MovePosition(transform.position + (Vector3)(movement) * speed * Time.deltaTime);
-		GetComponent<Rigidbody2D>().MoveRotation(Quaternion.LookRotation(movement, new Vector3(0.0f,0.0f,1.0f)));
+		if (movement != Vector2.zero) {
+			float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		}
     }
 	
 	

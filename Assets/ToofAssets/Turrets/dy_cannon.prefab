@@ -117,6 +117,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3246546138228833966, guid: 40c959db23922fb45a13fd94c4c39e56, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.1554174
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246546138228833966, guid: 40c959db23922fb45a13fd94c4c39e56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5777087
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246546138228833966, guid: 40c959db23922fb45a13fd94c4c39e56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -156,9 +164,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3717503885793371512, guid: 40c959db23922fb45a13fd94c4c39e56, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435003541061991665, guid: 40c959db23922fb45a13fd94c4c39e56, type: 3}
+      propertyPath: range
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8833704604102042660, guid: 40c959db23922fb45a13fd94c4c39e56, type: 3}
       propertyPath: m_Name
       value: Tower Range
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833704604102042660, guid: 40c959db23922fb45a13fd94c4c39e56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40c959db23922fb45a13fd94c4c39e56, type: 3}
