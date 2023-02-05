@@ -23,6 +23,8 @@ public class BasicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //transform.Rotate(Vector3.forward * 5);
+
 		float intensity = speed;
 		if (duration > 0.0f) {
 			if (slowAmount != 0.0f)  {
@@ -40,13 +42,11 @@ public class BasicEnemy : MonoBehaviour
 			DOTDamage = 0.0f;
 		}
 
-
 		if (waypoints.Count <= currentWaypointIndex) {
 			Destroy(gameObject);
 			GameObject.Find("Global").GetComponent<Global>().ApplyDamage(value);
 			return;
 		}
-		
 		
 		Vector3 target = new Vector3(waypoints[currentWaypointIndex].position.x, waypoints[currentWaypointIndex].position.y, 0.0f);
 		
