@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8789240060343764956}
   m_Layer: 0
   m_Name: RatKing
-  m_TagString: Untagged
+  m_TagString: Z ordering
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   value: 1
+  speed: 1
+  waypoints: []
+  currentWaypointIndex: 0
 --- !u!61 &8789240060343764959
 BoxCollider2D:
   m_ObjectHideFlags: 0

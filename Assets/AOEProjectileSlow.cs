@@ -14,6 +14,6 @@ public class AOEProjectileSlow : AOEProjectile
         col.gameObject.GetComponent<BasicEnemy>().ApplySlow((2.0f,2.0f)); // slow by half
         Destroy(gameObject);
       }
-      
+
     }
 }
