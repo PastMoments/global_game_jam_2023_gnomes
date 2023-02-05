@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  value: 1
-  speed: 2
+  value: 2
+  speed: 3
   waypoints: []
   currentWaypointIndex: 0
 --- !u!61 &6916360347037407624

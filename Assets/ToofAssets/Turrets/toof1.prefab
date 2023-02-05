@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df29b202fbf67844dadfb0c397ddf184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 7
   projectiles: {fileID: 8916025787986593630, guid: 68235cf8ac0e89b43acb03a70e9cb110, type: 3}
   shootTimer: 0
-  cost: 0
+  cost: 15
   damage: 2
   range: 5
   rangeObjects: []
