@@ -47,7 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BasicTurret: {fileID: 9088528911149874136, guid: 48f7227d6405ad148a34f2305d3106db, type: 3}
   building: 0
+  minimumPlaceDistance: 1
   currentBuilding: {fileID: 0}
+  currentPlacing: {fileID: 0}
+  placedTurrets: []
+  eventSystem: {fileID: 0}
 --- !u!60 &5513737484085001836
 PolygonCollider2D:
   m_ObjectHideFlags: 0

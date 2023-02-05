@@ -64,7 +64,6 @@ public class TurretSpawner : MonoBehaviour
 			
 			currentPlacing = Instantiate(turret, transform.position, Quaternion.identity);
 			currentPlacing.GetComponent<BasicTower>().enabled = false;
-			placedTurrets.Add(currentPlacing.gameObject);
 		} else {
 			building = false;
 			currentBuilding = null;
@@ -75,18 +74,23 @@ public class TurretSpawner : MonoBehaviour
 		if (building) {
 			if (currentPlacing != null) {
 				foreach (GameObject turret in placedTurrets) {
-					float dist = Vector3.Distance(currentTurret.position, turret.position);
-					if (dist > minimumPlaceDistance) {
-            // Remove turret cost from Currency, however, the cost is defined in the prefab in the editor.
-            GameObject global_obj = GameObject.Find("Global");				
-            int turretCost = currentPlacing.GetComponent<BasicTower>().cost;
-            if(global_obj.GetComponent<Global>().treeSap >= turretCost) {
-              currentPlacing.GetComponent<BasicTower>().enabled = true;
-              global_obj.SendMessage("RemoveSaps", turretCost);
-              currentPlacing = null;
-              currentBuilding = null;
-            }
+					float dist = Vector3.Distance(currentPlacing.transform.position, turret.transform.position);
+					print(dist);
+					if (dist < minimumPlaceDistance) {
+						
+						return;
 					}
+				}
+				
+				// Remove turret cost from Currency, however, the cost is defined in the prefab in the editor.
+				GameObject global_obj = GameObject.Find("Global");				
+				int turretCost = currentPlacing.GetComponent<BasicTower>().cost;
+				if(global_obj.GetComponent<Global>().treeSap >= turretCost) {
+				  currentPlacing.GetComponent<BasicTower>().enabled = true;
+				  placedTurrets.Add(currentPlacing);
+				  global_obj.SendMessage("RemoveSaps", turretCost);
+				  currentPlacing = null;
+				  currentBuilding = null;
 				}
 			}
 		}
