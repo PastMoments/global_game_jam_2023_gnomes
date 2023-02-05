@@ -239,7 +239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '14
+  m_Text: '10
 
 '
 --- !u!1 &2522938226284722628
@@ -585,7 +585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '50
+  m_Text: '12
 
 '
 --- !u!1 &3045309018819152865
@@ -1118,9 +1118,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '5
-
-'
+  m_Text: 8
 --- !u!1 &7420922492679296370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1373,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '50
+  m_Text: '15
 
 '
 --- !u!1 &8230294644741439103
@@ -1457,7 +1455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: 1
 --- !u!1 &8230294645029052120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1591,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8230294645059145984
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf99d6f3d4fd34b47ad2a9bb2aca4fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  value: 1
+  health: 15
+  value: 3
   speed: 2
   waypoints: []
   currentWaypointIndex: 0
