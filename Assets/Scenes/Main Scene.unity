@@ -128,6 +128,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4734463621362768526, guid: b834c68159cd8e542a905ac86f8a118d, type: 3}
   m_PrefabInstance: {fileID: 881147107}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &171966518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8274356301818584272, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+  m_PrefabInstance: {fileID: 2522938227503570000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &368958696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3684656776103248314, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+  m_PrefabInstance: {fileID: 2522938227503570000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &374104662
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,19 +641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2389493771971018372, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.369999
-      objectReference: {fileID: 0}
-    - target: {fileID: 2389493771971018372, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -19.920002
+      value: -9.899998
       objectReference: {fileID: 0}
     - target: {fileID: 2522938225783379429, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.369999
-      objectReference: {fileID: 0}
-    - target: {fileID: 2522938225783379429, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -19.920002
+      value: -9.899998
       objectReference: {fileID: 0}
     - target: {fileID: 2522938227479896462, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -667,11 +669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3229976631862868515, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.369999
-      objectReference: {fileID: 0}
-    - target: {fileID: 3229976631862868515, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -19.920002
+      value: -9.899998
       objectReference: {fileID: 0}
     - target: {fileID: 4673002114739422407, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -687,11 +685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5053441714863719341, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.369999
+      value: -9.899998
       objectReference: {fileID: 0}
-    - target: {fileID: 5053441714863719341, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -19.920002
+    - target: {fileID: 8230294644741439100, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9.900002
       objectReference: {fileID: 0}
     - target: {fileID: 8230294645059145985, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -815,6 +813,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+--- !u!1 &2522938227503570001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8999976993356487086, guid: 0427ff52535e7f34ea6a1ae766feb13d, type: 3}
+  m_PrefabInstance: {fileID: 2522938227503570000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7810074802567464907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -866,6 +869,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4179151272687184207, guid: 1e50609b28d098046b4e6857c5b09a7f, type: 3}
+      propertyPath: MoneyText
+      value: 
+      objectReference: {fileID: 171966518}
+    - target: {fileID: 4179151272687184207, guid: 1e50609b28d098046b4e6857c5b09a7f, type: 3}
+      propertyPath: TimerText
+      value: 
+      objectReference: {fileID: 2522938227503570001}
+    - target: {fileID: 4179151272687184207, guid: 1e50609b28d098046b4e6857c5b09a7f, type: 3}
+      propertyPath: HealthText
+      value: 
+      objectReference: {fileID: 368958696}
     - target: {fileID: 4493179319037472816, guid: 1e50609b28d098046b4e6857c5b09a7f, type: 3}
       propertyPath: m_Name
       value: Global

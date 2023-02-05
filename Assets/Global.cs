@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Global : MonoBehaviour
 {
@@ -10,12 +12,22 @@ public class Global : MonoBehaviour
     public float timeElapsed = 0.0f;  
     public int treeSap = 10;
 
+	public GameObject TimerText;
+	public GameObject MoneyText;
+	public GameObject HealthText;
+	
     void Start()
     {
     }
     void Update()
     {
         timeElapsed += Time.deltaTime;
+		
+		TimeSpan t = TimeSpan.FromSeconds(timeElapsed);
+		string format = (t.Hours >= 1 ? @"hh\:" : "") + @"mm\:ss\.ff";
+		TimerText.GetComponent<Text>().text = t.ToString(format);
+		MoneyText.GetComponent<Text>().text = health.ToString();
+		HealthText.GetComponent<Text>().text = treeSap.ToString();
     }
     
     void ApplyDamage(float damage)
@@ -43,7 +55,6 @@ public class Global : MonoBehaviour
 
     public void MuteToggle(bool muted)
     {
-
         if(muted) {
             AudioListener.volume = 0;
         } else {
