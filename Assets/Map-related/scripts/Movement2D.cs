@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// this goes under Enemy prefab asset
+
 public class Movement2D : MonoBehaviour {
     // Serializing non-public type
     [SerializeField]
