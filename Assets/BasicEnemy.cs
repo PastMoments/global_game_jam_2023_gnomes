@@ -13,7 +13,7 @@ public class BasicEnemy : MonoBehaviour
 	float slowAmount;
 	float duration;
 	float DOTDamage;
-	
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +40,13 @@ public class BasicEnemy : MonoBehaviour
 		} else {
 			slowAmount = 0.0f;
 			DOTDamage = 0.0f;
+		}
+
+		float intensity = speed;
+		if (duration > 0) {
+			intensity = speed / slowAmount;
+
+			duration -= Time.deltaTime;
 		}
 
 		if (waypoints.Count <= currentWaypointIndex) {

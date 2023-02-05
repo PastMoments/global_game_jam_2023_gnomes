@@ -26,8 +26,13 @@ public class Global : MonoBehaviour
 		TimeSpan t = TimeSpan.FromSeconds(timeElapsed);
 		string format = (t.Hours >= 1 ? @"hh\:" : "") + @"mm\:ss\.ff";
 		TimerText.GetComponent<Text>().text = t.ToString(format);
-		MoneyText.GetComponent<Text>().text = health.ToString();
-		HealthText.GetComponent<Text>().text = treeSap.ToString();
+		MoneyText.GetComponent<Text>().text = treeSap.ToString();
+		HealthText.GetComponent<Text>().text = health.ToString();
+		
+		foreach (GameObject order in GameObject.FindGameObjectsWithTag("Z ordering")) {
+			//order.transform.position = new Vector3(order.transform.position.x, order.transform.position.y, order.transform.position.y + 10);
+        }
+		
     }
     
     public void ApplyDamage(float damage)
@@ -53,13 +58,4 @@ public class Global : MonoBehaviour
         return treeSap;
     }
 
-    public void MuteToggle(bool muted)
-    {
-        if(muted) {
-            AudioListener.volume = 0;
-        } else {
-            AudioListener.volume = 1;
-        }
-
-    }
 }
