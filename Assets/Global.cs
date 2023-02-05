@@ -28,6 +28,11 @@ public class Global : MonoBehaviour
 		TimerText.GetComponent<Text>().text = t.ToString(format);
 		MoneyText.GetComponent<Text>().text = treeSap.ToString();
 		HealthText.GetComponent<Text>().text = health.ToString();
+		
+		foreach (GameObject order in GameObject.FindGameObjectsWithTag("Z ordering")) {
+			//order.transform.position = new Vector3(order.transform.position.x, order.transform.position.y, order.transform.position.y + 10);
+        }
+		
     }
     
     void ApplyDamage(float damage)
