@@ -11,6 +11,7 @@ public class BasicTower : MonoBehaviour
 	public float shootTimer = 0.0f;
 	public int cost;
     public float damage;
+	public float range = 5.0f;
     // check for null/invalid entries that represents destroyed Enemy Objects
 	public List<GameObject> rangeObjects = new List<GameObject>(); // list will only contain Enemies
 	
@@ -29,8 +30,9 @@ public class BasicTower : MonoBehaviour
 		if (shootTimer >= cooldown) {
 			rangeObjects.RemoveAll(x => (x == null));
 			if (rangeObjects.Count > 0) {
-				GameObject p = Instantiate(projectiles, transform.position, Quaternion.identity);
-				p.GetComponent<BasicProjectile>().target = rangeObjects[0]; 
+				BasicProjectile p = Instantiate(projectiles, transform.position, Quaternion.identity).GetComponent<BasicProjectile>();
+				p.target = rangeObjects[0];
+				p.damage = damage;
 				shootTimer -= cooldown;
 			}
 		}
