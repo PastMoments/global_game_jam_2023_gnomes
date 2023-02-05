@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  projectiles: {fileID: 8587821872975088974, guid: d0a77b63abdca9249ac7ac6e5c4bb513, type: 3}
-  shootTimer: 0
-  cost: 1
+  projectiles: {fileID: 1961289664350973157, guid: c222d85ea16cf8e408a156193d8bd567, type: 3}
+  shootTimer: 1
+  cost: 5
   damage: 4
   range: 5
   rangeObjects: []

@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  projectiles: {fileID: 8587821872975088974, guid: d0a77b63abdca9249ac7ac6e5c4bb513, type: 3}
-  shootTimer: 0
-  cost: 1
-  damage: 4
-  range: 5
+  projectiles: {fileID: 1302911496253307978, guid: 8456d2425ed63a44a8948e5b858b9723, type: 3}
+  shootTimer: 3
+  cost: 5
+  damage: 5
+  range: 10
   rangeObjects: []
 --- !u!1001 &8029677602921535898
 PrefabInstance:

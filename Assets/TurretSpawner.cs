@@ -6,8 +6,12 @@ using UnityEngine.EventSystems;
 public class TurretSpawner : MonoBehaviour
 {
 	
+	public GameObject Cannon;
+	public GameObject Harpoon;
+	public GameObject Catapult;
+	public GameObject RedShroom;
+	public GameObject BlueShroom;
 	
-	public GameObject BasicTurret;
 	public bool building = false;
 	public float minimumPlaceDistance;
 	public GameObject currentBuilding;
@@ -38,19 +42,19 @@ public class TurretSpawner : MonoBehaviour
     }
 	
 	void SpawnCannon() {
-		SpawnTurret(BasicTurret);
+		SpawnTurret(Cannon);
 	}
 	void SpawnHarpoon() {
-		SpawnTurret(BasicTurret);
+		SpawnTurret(Harpoon);
 	}
 	void SpawnCatapult() {
-		SpawnTurret(BasicTurret);
+		SpawnTurret(Catapult);
 	}
 	void SpawnRedShroom() {
-		SpawnTurret(BasicTurret);
+		SpawnTurret(RedShroom);
 	}
 	void SpawnBlueShroom() {
-		SpawnTurret(BasicTurret);
+		SpawnTurret(BlueShroom);
 	}
 	
 	void SpawnTurret(GameObject turret) {

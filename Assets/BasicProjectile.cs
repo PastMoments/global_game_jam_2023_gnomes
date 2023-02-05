@@ -9,7 +9,7 @@ public class BasicProjectile : MonoBehaviour
 	public GameObject target;
 	public float speed;
 	public float damage = 0.0f;
-	Vector3 movement;
+	Vector2 movement;
 	
 	float destroyTimer = 5.0f; // destroy itself 5 seconds after targets disappear
     // Start is called before the first frame update
@@ -20,15 +20,16 @@ public class BasicProjectile : MonoBehaviour
     void Update()
     {
 		if (target) {
-			movement = (target.transform.position - transform.position);
+			movement = (Vector2)(target.transform.position - transform.position);
 			movement.Normalize();
 		} else if (destroyTimer > 0.0f) {
 			destroyTimer -= Time.deltaTime;
 		} else {
 			Destroy(gameObject);
 		}
-			
-		GetComponent<Rigidbody2D>().MovePosition(transform.position + movement * speed * Time.deltaTime);
+		
+		GetComponent<Rigidbody2D>().MovePosition(transform.position + (Vector3)(movement) * speed * Time.deltaTime);
+		GetComponent<Rigidbody2D>().MoveRotation(Quaternion.LookRotation(movement, new Vector3(0.0f,0.0f,1.0f)));
     }
 	
 	
