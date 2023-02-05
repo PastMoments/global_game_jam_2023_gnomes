@@ -40,18 +40,4 @@ public class AOETower : BasicTower
 		  }
     }
 
-    public override void OnTriggerEnter2D(Collider2D col)
-    {
-		if (col.gameObject.GetComponent<BasicEnemy>()) {
-			rangeObjects.Add(col.gameObject);
-		}
-      
-    }
-	
-    public override void OnTriggerExit2D(Collider2D col)
-    {
-		rangeObjects.Remove(col.gameObject);
-      
-    }
-
 }

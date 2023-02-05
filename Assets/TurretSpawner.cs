@@ -100,7 +100,7 @@ public class TurretSpawner : MonoBehaviour
 				  currentPlacing.GetComponent<BasicTower>().enabled = true;
 				  currentPlacing.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
 				  placedTurrets.Add(currentPlacing);
-				  global_obj.SendMessage("RemoveSaps", turretCost);
+				  global_obj.GetComponent<Global>().RemoveSaps(turretCost);
 				  currentPlacing = null;
 				  currentBuilding = null;
 				}

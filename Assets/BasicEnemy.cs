@@ -12,6 +12,8 @@ public class BasicEnemy : MonoBehaviour
 	public int currentWaypointIndex = 0;
 	float slowAmount;
 	float duration;
+	float DOTDamage;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -22,17 +24,27 @@ public class BasicEnemy : MonoBehaviour
     void Update()
     {
         //transform.Rotate(Vector3.forward * 5);
-
+		print(health);
 		float intensity = speed;
-		if (duration > 0) {
-			intensity = speed / slowAmount;
+		if (duration > 0.0f) {
+			if (slowAmount != 0.0f)  {
+				intensity = speed / slowAmount;
+			}
+			
+			if (DOTDamage != 0.0f) {
+				float damageToBeDealt = DOTDamage / (duration * 1000);
+				ApplyDamage(damageToBeDealt);
+			}
 
 			duration -= Time.deltaTime;
+		} else {
+			slowAmount = 0.0f;
+			DOTDamage = 0.0f;
 		}
 
 		if (waypoints.Count <= currentWaypointIndex) {
 			Destroy(gameObject);
-			GameObject.Find("Global").SendMessage("ApplyDamage", value);
+			GameObject.Find("Global").GetComponent<Global>().ApplyDamage(value);
 			return;
 		}
 		
@@ -58,7 +70,7 @@ public class BasicEnemy : MonoBehaviour
 	public void ApplyDamage(float damage) {
 		health -= damage;
 		if (health <= 0.0f) {
-			GameObject.Find("Global").SendMessage("AddSaps", value);
+			GameObject.Find("Global").GetComponent<Global>().AddSaps((int)value);
 			Destroy(gameObject);
 		}
 	}
@@ -66,5 +78,10 @@ public class BasicEnemy : MonoBehaviour
 	public void ApplySlow((float, float) slow) {
 		this.slowAmount = slow.Item1;
 		this.duration = slow.Item2;
+	}
+
+	public void ApplyDOTDamage((float, float) damage) {
+		this.DOTDamage = damage.Item1;
+		this.duration = damage.Item2;
 	}
 }

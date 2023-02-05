@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AOEProjectileSlow : AOEProjectile
+public class AOEProjectileCatapult : BasicProjectile
 {
-    // configure destroyTimer
+    // implement curvature 
 
     // when a collision object enters range
     public override void OnTriggerEnter2D(Collider2D col)
     {
       if (col.gameObject.GetComponent<BasicEnemy>()) {
-        col.gameObject.GetComponent<BasicEnemy>().ApplyDamage(damage);
-        col.gameObject.GetComponent<BasicEnemy>().ApplySlow((2.0f,2.0f)); // slow by half
+        col.gameObject.GetComponent<BasicEnemy>().ApplyDOTDamage((damage+1.0f, 2.0f)); // deals more damage but over time instead
         Destroy(gameObject);
       }
       
